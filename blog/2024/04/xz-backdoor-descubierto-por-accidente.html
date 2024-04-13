@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Un importante hackeo en sistemas Linux… descubierto por accidente.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
+    <script src="https://kit.fontawesome.com/694b3e2a90.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../blog_style.css">
+
+  </head>
+  <body>
+    <main>
+        <article>
+            <div class="content-wrapper">
+                <div class="text-wrapper">
+                    <h1>Un importante hackeo en sistemas Linux… descubierto por accidente.</h1>
+                    <img src="../../../img/b/xz-backdoor.jpg" height="260" alt="">
+                    <p>El 29 de marzo de 2024 un ingeniero de Microsoft se encontr&oacute; con una situaci&oacute;n que le pareci&oacute; rara. Al querer iniciar sesi&oacute;n a trav&eacute;s de SSH (el cual es un protocolo de red para acceder remotamente a otros sistemas para administraci&oacute;n o transferencias de archivos) se dio cuenta que el mismo inicio de sesi&oacute;n era inusualmente lento y consum&iacute;a muchos recursos de CPU adem&aacute;s de reportes de errores de Valgrind (una herramienta que comprueba la integridad de la memoria).</p>
+                    <p>Todo eso llevo al descubrimiento de una puerta trasera que sobrepasa todo el sistema de seguridad de Linux y conlleva a que el atacante gane el acceso total del sistema. El mismo ingeniero detall&oacute; que fue de pura suerte y de que &ldquo;realmente requer&iacute;a de un mont&oacute;n de coincidencias&rdquo;.</p>
+                    <p>Ante este impresionante descubrimiento, m&aacute;s lo es el hecho de que fue un ataque cuidadosamente planeado, llevando un trabajo de casi 2 a&ntilde;os en total para implementar esta puerta trasera.</p>
+                    <h2>Infiltrándose de a poco</h2>
+                    <p>Comenzando en 2021, Jian Tian, un usuario desconocido y salido absolutamente de la nada, empez&oacute; a aportar arreglos y mantenimiento al programa XZ utils, un programa de compresi&oacute;n de datos que se distribuye y se usa por defecto en muchos sistemas Linux, sin dudas, es el blanco perfecto para tratar de desarrollar una vulnerabilidad.</p>
+                    <p>Estos aportes aparentemente inocentes pero sentando bases para lograr credibilidad continuaron hasta mayo de 2022 cuando otro usuario desconocido bajo un nombre falso Dennis Ens se quej&oacute; en la lista de correo de XZ de que las &uacute;ltimas actualizaciones del programa no eran de su agrado. Otro usuario de origen desconocido, Jigar Kumar, tambi&eacute;n se suma un par de veces criticando el &ldquo;lento&rdquo; desarrollo de las actualizaciones. Todo esto hecho para sumar presi&oacute;n al principal desarrollador de XZ utils, Lasse Collin, sumado al poco tiempo que pod&iacute;a dedicar al programa y tambi&eacute;n alegando que no se encontraba muy bien de salud mental, hizo que Collin terminara designando a Jia Tan como co-desarrollador, d&aacute;ndole permisos para publicar lanzamientos oficiales del c&oacute;digo.</p>
+                    <p>Esto hizo que Jia Tan se volviera firmemente involucrado en XZ utils. En 2023 propone desactivar GNU ifunc, una herramienta p&uacute;blica para encontrar c&oacute;digo inseguro. Esta operaci&oacute;n fue hecha para permitir posteriormente el desarrollo de la puerta trasera, ya que esta usa convenientemente dicha herramienta para llevar a cabo su cometido.</p>
+                    <p>Finalmente, en febrero de 2024 Jian Tan lanz&oacute; dos versiones de XZ que conten&iacute;a la puerta trasera en cuesti&oacute;n. A la vez que sucede esto, varias personas responsables de diferentes Distribuciones de Linux y de librer&iacute;as populares fueron contactadas por el atacante en cuesti&oacute;n para incluir estas versiones inseguras.</p>
+                    <h2>No solo los sistemas son vulnerables</h2>
+                    <p>Este ataque ha tomado desprevenido a la comunidad de C&oacute;digo Libre debido a su cuidadosa planificaci&oacute;n y sofisticaci&oacute;n t&eacute;cnica, ya que aprovecha vulnerabilidades en el c&oacute;digo y en el aspecto social con las interacciones a las personas encargadas del proyecto. Muchos medios aseguran que el atacante no sea una sola persona y hasta atribuyen un grupo de hacking apoyado por alg&uacute;n Gobierno.</p>
+                    <p>Como conclusi&oacute;n las comunidades y compa&ntilde;&iacute;as deber&iacute;an tener en cuenta a terceras partes en consideraci&oacute;n cuando se estiman las medidas de seguridad generales y el reconocimiento de puntos d&eacute;biles de en la cadena de abastecimiento <u>de</u> todo el proyecto.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+  </body>
+</html>
